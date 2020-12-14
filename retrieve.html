@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>MACHAKOS UNIVERSITY</title>
+<link rel="stylesheet" type="text/css" href="main.css">
+<style>
+*{padding:0px;
+  margin:0px;
+}
+body{
+
+}
+header{height:100px;
+   background-color:purple;}
+   a{border:1px solid black;
+   padding:5px;
+   color:black;}
+   nav{
+   display:flex;
+   justify-content:space-around;   }
+h5{font-size:24px;
+   color:blue; 
+   text-align:center;
+   padding:25px;}
+form{position:absolute;
+top:130px;
+left:650px;
+
+}
+p{padding:20px;
+}
+footer{
+	position: absolute;
+	top: 620px;
+	left: 208px;
+	height: 120px;
+	width: 100%;
+}
+
+nav{
+text-align:right;
+padding:10px ;
+mergin:10px;
+
+}
+</style>
+</head>
+
+<body>
+<div class="header">
+<nav>
+<a href="index.html">HOMEPAGE</a>
+<a href="gallery.html">GALLERY</a>
+<a href="regestration.html">REGISTRATION</a>
+<a href="retrieve.html">REGISTERED</a>
+<a href="contact.html">CONTACT</a>
+</nav>
+</div>
+
+<?php
+include_once 'dbh.php';
+
+$sql = "SELECT * FROM studentreg";
+$result = mysqli_query($conn, $sql);
+if(mysqli_num_rows($result) > 0 ){
+	echo '<table border = 3px  cellpadding = 5px><tr><td>Name</td><td>Email</td><td>Course</td><td>Admission Number</td><td>Department</td></tr>';
+	while($row = mysqli_fetch_assoc($result)){
+		echo '<tr><td>' .$row['name'].'</td><td>'.$row['email'].'</td><td>'.$row['course'].'</td><td>'.$row['admin_no'].'
+		</td><td>'.$row['depa'].'</td></tr>';
+	}
+}else{
+	echo 'No registered students in the database';
+}
+?>

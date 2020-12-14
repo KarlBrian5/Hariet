@@ -1,0 +1,70 @@
+
+<html>
+<head>
+<title>MACHAKOS UNIVERSITY</title>
+<link rel="stylesheet" type="text/css" href="main.css">
+<style>
+*{padding:0px;
+  margin:0px;
+}
+
+header{height:100px;
+   background-color:gray;}
+   a{border:1px solid black;
+   padding:5px;
+   color:black;}
+   nav{
+   display:flex;
+   justify-content:space-around;   }
+h5{font-size:24px;
+   color:blue; 
+   text-align:center;
+   padding:25px;}
+form{position:absolute;
+top:130px;
+margin-left:450px;
+}
+p{padding:7px;
+font-size:18px;
+color:purple;
+}
+input[type=text], input[type=email], input[type=submit]{
+height:30px;
+width:70%;
+color:purple;
+}
+nav{
+text-align:right;
+padding:10px ;
+mergin:10px;
+
+}
+</style>
+</head>
+
+<body>
+<div class="header">
+<nav>
+<a href="index.html">HOMEPAGE</a>
+<a href="gallery.html">GALLERY</a>
+<a href="regestration.html">REGISTRATION</a>
+<a href="retrieve.html">REGISTERED</a>
+<a href="contact.html">CONTACT</a>
+</nav>
+</div>
+
+<section>
+	<form action="registered.php" method="post" style="width:40%; ">
+		<P>NAME:<p><input type="text" name="name"></p></P>
+		<p>EMAIL:<p><input type="text" name="email"></p></p>
+         <p>COURSE:<p><input type="text" name="course"></p></p>
+		 <p>ADMIN_NO:<p><input type="text" name="admin_no"></p></p>
+		 <p>DEPARTMENT:<p><input type="text" name="depa"></p></p>
+		<P>
+		<input type="submit"name="submit" >  </P>  
+		
+	</form>
+</section>
+
+</body>
+</html>

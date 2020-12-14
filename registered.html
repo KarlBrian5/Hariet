@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>inserting data</title>
+</head>
+
+<body>
+<?php
+$con = mysqli_connect("localhost","root","");
+if(!$con)
+{
+	echo'server not connected';
+}
+else
+{
+	echo'connection succesful';
+}
+if(!mysqli_select_db($con,'websiteregistration'))
+{
+	echo'database not selected';
+}
+else
+{
+	echo'database selected';
+}
+$name=$_POST['name'];
+$email=$_POST['email'];
+$course=$_POST['course'];
+$admin_no=$_POST['admin_no'];
+$depa=$_POST['depa'];
+
+
+$sql="insert into studentreg(name,email,course,admin_no,depa)values('$name','$email','$course','$admin_no','$depa')";
+if(!mysqli_query($con,$sql))
+{
+	echo'data not inserted';
+}
+else
+{
+	echo'data inserted successfully';
+}
+?>
+</body>
+</html>
